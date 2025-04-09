@@ -21,7 +21,7 @@ namespace ProjetoInterfaceMultifuncoes
             timerCOM.Interval = 2000;
             timerCOM.Start();
             picBoxLED.Tag = "Desligado";
-            picBoxLED.Image = Image.FromFile("");
+            picBoxLED.Image = Image.FromFile("C:\\Users\\Aluno\\Desktop\\InterfaceMultifuncoes\\Imagens\\LedDesligado.jpg");
             picBoxLED.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
@@ -171,14 +171,14 @@ namespace ProjetoInterfaceMultifuncoes
                     {
                         serialPort1.Write("D\n");
                         picBoxLED.Tag = "Ligado";
-                        picBoxLED.Image = Image.FromFile("");
+                        picBoxLED.Image = Image.FromFile("C:\\Users\\Aluno\\Desktop\\InterfaceMultifuncoes\\Imagens\\LedDesligado.jpg");
                         picBoxLED.SizeMode = PictureBoxSizeMode.StretchImage;
                     }
                     else
                     {
                         serialPort1.Write("L\n");
                         picBoxLED.Tag = "Desligado";
-                        picBoxLED.Image = Image.FromFile("");
+                        picBoxLED.Image = Image.FromFile("C:\\Users\\Aluno\\Desktop\\InterfaceMultifuncoes\\Imagens\\LedLigado.jpg");
                         picBoxLED.SizeMode = PictureBoxSizeMode.StretchImage;
 
                     }

@@ -32,13 +32,13 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnConectar = new System.Windows.Forms.Button();
             this.lblPotenciometro = new System.Windows.Forms.Label();
             this.lblSensorTemp = new System.Windows.Forms.Label();
-            this.timerCOM = new System.Windows.Forms.Timer(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.picBoxLED = new System.Windows.Forms.PictureBox();
+            this.timerCOM = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -68,17 +68,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.picBoxLED);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(791, 424);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -116,20 +105,31 @@
             this.lblSensorTemp.TabIndex = 5;
             this.lblSensorTemp.Text = "SensorTemepratura";
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.picBoxLED);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(791, 424);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // picBoxLED
+            // 
+            this.picBoxLED.Location = new System.Drawing.Point(220, 69);
+            this.picBoxLED.Name = "picBoxLED";
+            this.picBoxLED.Size = new System.Drawing.Size(340, 242);
+            this.picBoxLED.TabIndex = 8;
+            this.picBoxLED.TabStop = false;
+            this.picBoxLED.Click += new System.EventHandler(this.picBoxLED_Click_1);
+            // 
             // timerCOM
             // 
             this.timerCOM.Enabled = true;
             this.timerCOM.Interval = 1000;
             this.timerCOM.Tick += new System.EventHandler(this.timerCOM_Tick);
-            // 
-            // picBoxLED
-            // 
-            this.picBoxLED.Location = new System.Drawing.Point(245, 56);
-            this.picBoxLED.Name = "picBoxLED";
-            this.picBoxLED.Size = new System.Drawing.Size(179, 166);
-            this.picBoxLED.TabIndex = 8;
-            this.picBoxLED.TabStop = false;
-            this.picBoxLED.Click += new System.EventHandler(this.picBoxLED_Click_1);
             // 
             // Form1
             // 
