@@ -82,10 +82,12 @@ namespace ProjetoInterfaceMultifuncoes
                 string dadosRecebidos = linhas[0].Trim();
                 string[] dados = dadosRecebidos.Split(',');
 
+
+
                 if (dados.Length == 3)
                 {
-                    double temperatura = double.Parse(dados[0]);
-                    double tensaoA0 = double.Parse(dados[2]);
+                    double temperatura = double.Parse(dados[0].Replace(".",","));
+                    double tensaoA0 = double.Parse(dados[2].Replace(".", ","));
 
                     // Atualiza os rótulos na interface
                     lblSensorTemp.Text = temperatura.ToString("0.00") + " °C";
@@ -188,6 +190,11 @@ namespace ProjetoInterfaceMultifuncoes
                     MessageBox.Show("Erro ao enviar comando: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void lblSensorTemp_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

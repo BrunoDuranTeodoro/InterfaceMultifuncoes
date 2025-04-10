@@ -45,6 +45,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxLED)).BeginInit();
             this.SuspendLayout();
             // 
+            // serialPort1
+            // 
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -104,6 +108,7 @@
             this.lblSensorTemp.Size = new System.Drawing.Size(100, 13);
             this.lblSensorTemp.TabIndex = 5;
             this.lblSensorTemp.Text = "SensorTemepratura";
+            this.lblSensorTemp.Click += new System.EventHandler(this.lblSensorTemp_Click);
             // 
             // tabPage2
             // 
