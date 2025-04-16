@@ -87,9 +87,13 @@ namespace ProjetoInterfaceMultifuncoes
                 if (dados.Length == 3)
                 {
                     double temperatura = double.Parse(dados[0].Replace(".",","));
-                    double tensaoA0 = double.Parse(dados[2].Replace(".", ","));
+                    double tensaoA0 = double.Parse(dados[2].Replace(".", ",")); 
+
+                    object value = aGauge1_ValueInRangeChanged.Invoke(Convert.ToInt32(temperatura));
+                    object valuee = aGauge3_ValueInRangeChanged.Invoke(Convert.ToInt32(tensaoA0));
 
                     // Atualiza os rótulos na interface
+
                     lblSensorTemp.Text = temperatura.ToString("0.00") + " °C";
                     lblPotenciometro.Text = tensaoA0.ToString("0.00") + " V";
                 }
@@ -233,6 +237,26 @@ namespace ProjetoInterfaceMultifuncoes
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSensorTemp_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aGauge1_ValueInRangeChanged(object sender, ValueInRangeChangedEventArgs e)
+        {
+
+        }
+
+        private void aGauge3_ValueInRangeChanged(object sender, ValueInRangeChangedEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

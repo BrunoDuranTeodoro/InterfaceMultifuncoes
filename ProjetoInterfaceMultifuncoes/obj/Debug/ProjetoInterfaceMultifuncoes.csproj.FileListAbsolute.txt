@@ -18,3 +18,13 @@ C:\Users\Aluno\Desktop\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\De
 C:\Users\Aluno\Desktop\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.csproj.CoreCompileInputs.cache
 C:\Users\Aluno\Desktop\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.exe
 C:\Users\Aluno\Desktop\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.pdb
+C:\Users\Aluno\Desktop\a\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\bin\Debug\ProjetoInterfaceMultifuncoes.exe.config
+C:\Users\Aluno\Desktop\a\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\bin\Debug\ProjetoInterfaceMultifuncoes.exe
+C:\Users\Aluno\Desktop\a\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\bin\Debug\ProjetoInterfaceMultifuncoes.pdb
+C:\Users\Aluno\Desktop\a\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.csproj.AssemblyReference.cache
+C:\Users\Aluno\Desktop\a\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.Form1.resources
+C:\Users\Aluno\Desktop\a\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.Properties.Resources.resources
+C:\Users\Aluno\Desktop\a\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.csproj.GenerateResource.cache
+C:\Users\Aluno\Desktop\a\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.csproj.CoreCompileInputs.cache
+C:\Users\Aluno\Desktop\a\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.exe
+C:\Users\Aluno\Desktop\a\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.pdb
