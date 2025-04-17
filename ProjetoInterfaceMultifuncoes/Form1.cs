@@ -87,15 +87,12 @@ namespace ProjetoInterfaceMultifuncoes
                 if (dados.Length == 3)
                 {
                     double temperatura = double.Parse(dados[0].Replace(".",","));
-                    double tensaoA0 = double.Parse(dados[2].Replace(".", ",")); 
+                    double tensaoA0 = double.Parse(dados[2].Replace(".", ","));
 
-                    object value = aGauge1_ValueInRangeChanged.Invoke(Convert.ToInt32(temperatura));
-                    object valuee = aGauge3_ValueInRangeChanged.Invoke(Convert.ToInt32(tensaoA0));
+                    aGauge1.Value = Convert.ToInt32(temperatura); // Atualizando o valor do gauge da temperatura
+                    aGauge3.Value = Convert.ToInt32(tensaoA0 * 10);
 
                     // Atualiza os rótulos na interface
-
-                    lblSensorTemp.Text = temperatura.ToString("0.00") + " °C";
-                    lblPotenciometro.Text = tensaoA0.ToString("0.00") + " V";
                 }
                 else
                 {

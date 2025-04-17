@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.AGaugeLabel aGaugeLabel1 = new System.Windows.Forms.AGaugeLabel();
+            System.Windows.Forms.AGaugeRange aGaugeRange1 = new System.Windows.Forms.AGaugeRange();
+            System.Windows.Forms.AGaugeRange aGaugeRange2 = new System.Windows.Forms.AGaugeRange();
+            System.Windows.Forms.AGaugeRange aGaugeRange3 = new System.Windows.Forms.AGaugeRange();
             System.Windows.Forms.AGaugeLabel aGaugeLabel2 = new System.Windows.Forms.AGaugeLabel();
             System.Windows.Forms.AGaugeRange aGaugeRange4 = new System.Windows.Forms.AGaugeRange();
             System.Windows.Forms.AGaugeRange aGaugeRange5 = new System.Windows.Forms.AGaugeRange();
             System.Windows.Forms.AGaugeRange aGaugeRange6 = new System.Windows.Forms.AGaugeRange();
             System.Windows.Forms.AGaugeRange aGaugeRange7 = new System.Windows.Forms.AGaugeRange();
-            System.Windows.Forms.AGaugeLabel aGaugeLabel1 = new System.Windows.Forms.AGaugeLabel();
-            System.Windows.Forms.AGaugeRange aGaugeRange1 = new System.Windows.Forms.AGaugeRange();
-            System.Windows.Forms.AGaugeRange aGaugeRange2 = new System.Windows.Forms.AGaugeRange();
-            System.Windows.Forms.AGaugeRange aGaugeRange3 = new System.Windows.Forms.AGaugeRange();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -48,12 +48,12 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.picBoxLED = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.aGauge3 = new System.Windows.Forms.AGauge();
+            this.aGauge1 = new System.Windows.Forms.AGauge();
             this.lblSensorTemp = new System.Windows.Forms.Label();
             this.timerCOM = new System.Windows.Forms.Timer(this.components);
-            this.aGauge1 = new System.Windows.Forms.AGauge();
-            this.aGauge3 = new System.Windows.Forms.AGauge();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -171,21 +171,98 @@
             this.tabPage3.Text = "SENSORES";
             this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
-            // lblSensorTemp
+            // label2
             // 
-            this.lblSensorTemp.AutoSize = true;
-            this.lblSensorTemp.Location = new System.Drawing.Point(184, 329);
-            this.lblSensorTemp.Name = "lblSensorTemp";
-            this.lblSensorTemp.Size = new System.Drawing.Size(67, 13);
-            this.lblSensorTemp.TabIndex = 6;
-            this.lblSensorTemp.Text = "Temperatura";
-            this.lblSensorTemp.Click += new System.EventHandler(this.lblSensorTemp_Click_1);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Consolas", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(250, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(312, 75);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Sensores";
             // 
-            // timerCOM
+            // label1
             // 
-            this.timerCOM.Enabled = true;
-            this.timerCOM.Interval = 1000;
-            this.timerCOM.Tick += new System.EventHandler(this.timerCOM_Tick);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(539, 329);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Potenciômetro";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // aGauge3
+            // 
+            this.aGauge3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.aGauge3.BaseArcColor = System.Drawing.Color.Black;
+            this.aGauge3.BaseArcRadius = 80;
+            this.aGauge3.BaseArcStart = 135;
+            this.aGauge3.BaseArcSweep = 270;
+            this.aGauge3.BaseArcWidth = 2;
+            this.aGauge3.Center = new System.Drawing.Point(100, 100);
+            aGaugeLabel1.Color = System.Drawing.SystemColors.WindowText;
+            aGaugeLabel1.Name = "GaugeLabel1";
+            aGaugeLabel1.Position = new System.Drawing.Point(70, 150);
+            aGaugeLabel1.Text = "";
+            this.aGauge3.GaugeLabels.Add(aGaugeLabel1);
+            aGaugeRange1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            aGaugeRange1.EndValue = 20F;
+            aGaugeRange1.InnerRadius = 50;
+            aGaugeRange1.InRange = false;
+            aGaugeRange1.Name = "GaugeRangeNormal";
+            aGaugeRange1.OuterRadius = 80;
+            aGaugeRange1.StartValue = 0F;
+            aGaugeRange2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            aGaugeRange2.EndValue = 30F;
+            aGaugeRange2.InnerRadius = 50;
+            aGaugeRange2.InRange = false;
+            aGaugeRange2.Name = "GaugeRangeAlerta2";
+            aGaugeRange2.OuterRadius = 80;
+            aGaugeRange2.StartValue = 20F;
+            aGaugeRange3.Color = System.Drawing.Color.Red;
+            aGaugeRange3.EndValue = 50F;
+            aGaugeRange3.InnerRadius = 50;
+            aGaugeRange3.InRange = false;
+            aGaugeRange3.Name = "GaugeRangeAlerta3";
+            aGaugeRange3.OuterRadius = 80;
+            aGaugeRange3.StartValue = 30F;
+            this.aGauge3.GaugeRanges.Add(aGaugeRange1);
+            this.aGauge3.GaugeRanges.Add(aGaugeRange2);
+            this.aGauge3.GaugeRanges.Add(aGaugeRange3);
+            this.aGauge3.Location = new System.Drawing.Point(470, 138);
+            this.aGauge3.MaxValue = 50F;
+            this.aGauge3.MinValue = 0F;
+            this.aGauge3.Name = "aGauge3";
+            this.aGauge3.NeedleColor1 = System.Windows.Forms.AGaugeNeedleColor.Gray;
+            this.aGauge3.NeedleColor2 = System.Drawing.Color.DimGray;
+            this.aGauge3.NeedleRadius = 80;
+            this.aGauge3.NeedleType = System.Windows.Forms.NeedleType.Advance;
+            this.aGauge3.NeedleWidth = 2;
+            this.aGauge3.ScaleLinesInterColor = System.Drawing.Color.Black;
+            this.aGauge3.ScaleLinesInterInnerRadius = 73;
+            this.aGauge3.ScaleLinesInterOuterRadius = 80;
+            this.aGauge3.ScaleLinesInterWidth = 1;
+            this.aGauge3.ScaleLinesMajorColor = System.Drawing.Color.White;
+            this.aGauge3.ScaleLinesMajorInnerRadius = 70;
+            this.aGauge3.ScaleLinesMajorOuterRadius = 80;
+            this.aGauge3.ScaleLinesMajorStepValue = 5F;
+            this.aGauge3.ScaleLinesMajorWidth = 2;
+            this.aGauge3.ScaleLinesMinorColor = System.Drawing.Color.White;
+            this.aGauge3.ScaleLinesMinorInnerRadius = 75;
+            this.aGauge3.ScaleLinesMinorOuterRadius = 80;
+            this.aGauge3.ScaleLinesMinorTicks = 9;
+            this.aGauge3.ScaleLinesMinorWidth = 1;
+            this.aGauge3.ScaleNumbersColor = System.Drawing.Color.Black;
+            this.aGauge3.ScaleNumbersFormat = null;
+            this.aGauge3.ScaleNumbersRadius = 95;
+            this.aGauge3.ScaleNumbersRotation = 0;
+            this.aGauge3.ScaleNumbersStartScaleLine = 0;
+            this.aGauge3.ScaleNumbersStepScaleLines = 1;
+            this.aGauge3.Size = new System.Drawing.Size(211, 188);
+            this.aGauge3.TabIndex = 10;
+            this.aGauge3.Text = "aGauge3";
+            this.aGauge3.Value = 0F;
+            this.aGauge3.ValueInRangeChanged += new System.EventHandler<System.Windows.Forms.ValueInRangeChangedEventArgs>(this.aGauge3_ValueInRangeChanged);
             // 
             // aGauge1
             // 
@@ -268,98 +345,21 @@
             this.aGauge1.Value = 0F;
             this.aGauge1.ValueInRangeChanged += new System.EventHandler<System.Windows.Forms.ValueInRangeChangedEventArgs>(this.aGauge1_ValueInRangeChanged);
             // 
-            // aGauge3
+            // lblSensorTemp
             // 
-            this.aGauge3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.aGauge3.BaseArcColor = System.Drawing.Color.Black;
-            this.aGauge3.BaseArcRadius = 80;
-            this.aGauge3.BaseArcStart = 135;
-            this.aGauge3.BaseArcSweep = 270;
-            this.aGauge3.BaseArcWidth = 2;
-            this.aGauge3.Center = new System.Drawing.Point(100, 100);
-            aGaugeLabel1.Color = System.Drawing.SystemColors.WindowText;
-            aGaugeLabel1.Name = "GaugeLabel1";
-            aGaugeLabel1.Position = new System.Drawing.Point(70, 150);
-            aGaugeLabel1.Text = "";
-            this.aGauge3.GaugeLabels.Add(aGaugeLabel1);
-            aGaugeRange1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            aGaugeRange1.EndValue = 40F;
-            aGaugeRange1.InnerRadius = 50;
-            aGaugeRange1.InRange = false;
-            aGaugeRange1.Name = "GaugeRangeNormal";
-            aGaugeRange1.OuterRadius = 80;
-            aGaugeRange1.StartValue = 0F;
-            aGaugeRange2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            aGaugeRange2.EndValue = 70F;
-            aGaugeRange2.InnerRadius = 50;
-            aGaugeRange2.InRange = false;
-            aGaugeRange2.Name = "GaugeRangeAlerta2";
-            aGaugeRange2.OuterRadius = 80;
-            aGaugeRange2.StartValue = 40F;
-            aGaugeRange3.Color = System.Drawing.Color.Red;
-            aGaugeRange3.EndValue = 120F;
-            aGaugeRange3.InnerRadius = 50;
-            aGaugeRange3.InRange = false;
-            aGaugeRange3.Name = "GaugeRangeAlerta3";
-            aGaugeRange3.OuterRadius = 80;
-            aGaugeRange3.StartValue = 70F;
-            this.aGauge3.GaugeRanges.Add(aGaugeRange1);
-            this.aGauge3.GaugeRanges.Add(aGaugeRange2);
-            this.aGauge3.GaugeRanges.Add(aGaugeRange3);
-            this.aGauge3.Location = new System.Drawing.Point(470, 138);
-            this.aGauge3.MaxValue = 120F;
-            this.aGauge3.MinValue = 0F;
-            this.aGauge3.Name = "aGauge3";
-            this.aGauge3.NeedleColor1 = System.Windows.Forms.AGaugeNeedleColor.Gray;
-            this.aGauge3.NeedleColor2 = System.Drawing.Color.DimGray;
-            this.aGauge3.NeedleRadius = 80;
-            this.aGauge3.NeedleType = System.Windows.Forms.NeedleType.Advance;
-            this.aGauge3.NeedleWidth = 2;
-            this.aGauge3.ScaleLinesInterColor = System.Drawing.Color.Black;
-            this.aGauge3.ScaleLinesInterInnerRadius = 73;
-            this.aGauge3.ScaleLinesInterOuterRadius = 80;
-            this.aGauge3.ScaleLinesInterWidth = 1;
-            this.aGauge3.ScaleLinesMajorColor = System.Drawing.Color.White;
-            this.aGauge3.ScaleLinesMajorInnerRadius = 70;
-            this.aGauge3.ScaleLinesMajorOuterRadius = 80;
-            this.aGauge3.ScaleLinesMajorStepValue = 10F;
-            this.aGauge3.ScaleLinesMajorWidth = 2;
-            this.aGauge3.ScaleLinesMinorColor = System.Drawing.Color.White;
-            this.aGauge3.ScaleLinesMinorInnerRadius = 75;
-            this.aGauge3.ScaleLinesMinorOuterRadius = 80;
-            this.aGauge3.ScaleLinesMinorTicks = 9;
-            this.aGauge3.ScaleLinesMinorWidth = 1;
-            this.aGauge3.ScaleNumbersColor = System.Drawing.Color.Black;
-            this.aGauge3.ScaleNumbersFormat = null;
-            this.aGauge3.ScaleNumbersRadius = 95;
-            this.aGauge3.ScaleNumbersRotation = 0;
-            this.aGauge3.ScaleNumbersStartScaleLine = 0;
-            this.aGauge3.ScaleNumbersStepScaleLines = 1;
-            this.aGauge3.Size = new System.Drawing.Size(211, 188);
-            this.aGauge3.TabIndex = 10;
-            this.aGauge3.Text = "aGauge3";
-            this.aGauge3.Value = 0F;
-            this.aGauge3.ValueInRangeChanged += new System.EventHandler<System.Windows.Forms.ValueInRangeChangedEventArgs>(this.aGauge3_ValueInRangeChanged);
+            this.lblSensorTemp.AutoSize = true;
+            this.lblSensorTemp.Location = new System.Drawing.Point(184, 329);
+            this.lblSensorTemp.Name = "lblSensorTemp";
+            this.lblSensorTemp.Size = new System.Drawing.Size(67, 13);
+            this.lblSensorTemp.TabIndex = 6;
+            this.lblSensorTemp.Text = "Temperatura";
+            this.lblSensorTemp.Click += new System.EventHandler(this.lblSensorTemp_Click_1);
             // 
-            // label1
+            // timerCOM
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(539, 329);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Potenciômetro";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Consolas", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(250, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(312, 75);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Sensores";
+            this.timerCOM.Enabled = true;
+            this.timerCOM.Interval = 1000;
+            this.timerCOM.Tick += new System.EventHandler(this.timerCOM_Tick);
             // 
             // Form1
             // 

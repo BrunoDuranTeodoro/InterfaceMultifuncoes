@@ -28,3 +28,17 @@ C:\Users\Aluno\Desktop\a\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\
 C:\Users\Aluno\Desktop\a\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.csproj.CoreCompileInputs.cache
 C:\Users\Aluno\Desktop\a\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.exe
 C:\Users\Aluno\Desktop\a\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.pdb
+C:\Users\Aluno\Desktop\AULA\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\bin\Debug\ProjetoInterfaceMultifuncoes.exe.config
+C:\Users\Aluno\Desktop\AULA\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\bin\Debug\ProjetoInterfaceMultifuncoes.exe
+C:\Users\Aluno\Desktop\AULA\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\bin\Debug\ProjetoInterfaceMultifuncoes.pdb
+C:\Users\Aluno\Desktop\AULA\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\bin\Debug\AGauge.dll
+C:\Users\Aluno\Desktop\AULA\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.csproj.AssemblyReference.cache
+C:\Users\Aluno\Desktop\AULA\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.Form1.resources
+C:\Users\Aluno\Desktop\AULA\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.Properties.Resources.resources
+C:\Users\Aluno\Desktop\AULA\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.csproj.GenerateResource.cache
+C:\Users\Aluno\Desktop\AULA\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.csproj.CoreCompileInputs.cache
+C:\Users\Aluno\Desktop\AULA\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoI.199310DE.Up2Date
+C:\Users\Aluno\Desktop\AULA\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.exe
+C:\Users\Aluno\Desktop\AULA\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoInterfaceMultifuncoes.pdb
+C:\Users\Aluno\Desktop\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\bin\Debug\AGauge.dll
+C:\Users\Aluno\Desktop\InterfaceMultifuncoes\ProjetoInterfaceMultifuncoes\obj\Debug\ProjetoI.199310DE.Up2Date
