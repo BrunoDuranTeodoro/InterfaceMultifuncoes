@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\Aluno\\Desktop\\InterfaceMultifuncoes\\ProjetoInterfaceMultifuncoes\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5FF0A5CF-CFCA-4681-A90F-85225F27DFA3}|ProjetoInterfaceMultifuncoes.csproj|C:\\Users\\Aluno\\Desktop\\InterfaceMultifuncoes\\ProjetoInterfaceMultifuncoes\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{5FF0A5CF-CFCA-4681-A90F-85225F27DFA3}|ProjetoInterfaceMultifuncoes.csproj|c:\\users\\aluno\\desktop\\interfacemultifuncoes\\projetointerfacemultifuncoes\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{5FF0A5CF-CFCA-4681-A90F-85225F27DFA3}|ProjetoInterfaceMultifuncoes.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{5FF0A5CF-CFCA-4681-A90F-85225F27DFA3}|ProjetoInterfaceMultifuncoes.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FF0A5CF-CFCA-4681-A90F-85225F27DFA3}|ProjetoInterfaceMultifuncoes.csproj|c:\\users\\aluno\\desktop\\interfacemultifuncoes\\projetointerfacemultifuncoes\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5FF0A5CF-CFCA-4681-A90F-85225F27DFA3}|ProjetoInterfaceMultifuncoes.csproj|C:\\Users\\Aluno\\Desktop\\InterfaceMultifuncoes\\ProjetoInterfaceMultifuncoes\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FF0A5CF-CFCA-4681-A90F-85225F27DFA3}|ProjetoInterfaceMultifuncoes.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\Aluno\\Desktop\\InterfaceMultifuncoes\\ProjetoInterfaceMultifuncoes\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAEwGAAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAIwF0AAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-09T22:02:23.351Z",
               "EditorCaption": ""

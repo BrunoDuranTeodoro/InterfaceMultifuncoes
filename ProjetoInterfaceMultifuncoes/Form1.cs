@@ -5,7 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,16 +17,18 @@ namespace ProjetoInterfaceMultifuncoes
     {
         private StringBuilder bufferRecebido = new StringBuilder();
 
+        // Construtor: Inicializa a interface e configura o temporizador e o LED
         public Form1()
         {
             InitializeComponent();
-            timerCOM.Interval = 2000;
-            timerCOM.Start();
-            picBoxLED.Tag = "Desligado";
+            timerCOM.Interval = 2000;  // Intervalo de 2 segundos
+            timerCOM.Start();          // Inicia o timer
+            picBoxLED.Tag = "Desligado"; // Estado inicial do LED
             picBoxLED.Image = Image.FromFile("C:\\Users\\Aluno\\Desktop\\InterfaceMultifuncoes\\Imagens\\LedDesligado.jpg");
-            picBoxLED.SizeMode = PictureBoxSizeMode.StretchImage;
+            picBoxLED.SizeMode = PictureBoxSizeMode.StretchImage; // Ajusta o tamanho da imagem
         }
 
+        // Evento ao fechar o formulário: Fecha a porta serial se estiver aberta
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (serialPort1.IsOpen)
@@ -33,12 +37,12 @@ namespace ProjetoInterfaceMultifuncoes
             }
         }
 
+        // Recebe dados da porta serial e chama o processamento quando necessário
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             try
             {
                 bufferRecebido.Append(serialPort1.ReadExisting());
-
                 if (bufferRecebido.ToString().Contains("\n"))
                 {
                     this.Invoke((MethodInvoker)trataDadosRecebidos);
@@ -50,22 +54,22 @@ namespace ProjetoInterfaceMultifuncoes
             }
         }
 
+        // Atualiza a lista de portas COM disponíveis no comboBox
         private void atualizaListaCOMs()
         {
             comboBox1.Items.Clear();
             string[] portas = SerialPort.GetPortNames();
-
             if (portas.Length == 0)
             {
                 comboBox1.Items.Add("Nenhuma porta encontrada");
                 comboBox1.SelectedIndex = 0;
                 return;
             }
-
             foreach (string porta in portas)
                 comboBox1.Items.Add(porta);
         }
 
+        // Processa os dados recebidos, atualiza os gauges da interface
         private void trataDadosRecebidos()
         {
             try
@@ -78,21 +82,16 @@ namespace ProjetoInterfaceMultifuncoes
                     bufferRecebido.Append(linhas[linhas.Length - 1]);
                 }
 
-                // Agora dividimos os dados usando a vírgula como delimitador
                 string dadosRecebidos = linhas[0].Trim();
                 string[] dados = dadosRecebidos.Split(',');
 
-
-
                 if (dados.Length == 3)
                 {
-                    double temperatura = double.Parse(dados[0].Replace(".",","));
+                    double temperatura = double.Parse(dados[0].Replace(".", ","));
                     double tensaoA0 = double.Parse(dados[2].Replace(".", ","));
 
-                    aGauge1.Value = Convert.ToInt32(temperatura); // Atualizando o valor do gauge da temperatura
-                    aGauge3.Value = Convert.ToInt32(tensaoA0 * 10);
-
-                    // Atualiza os rótulos na interface
+                    aGauge1.Value = Convert.ToInt32(temperatura);
+                    aGauge3.Value = Convert.ToInt32((tensaoA0 / 5) * 100);
                 }
                 else
                 {
@@ -105,7 +104,7 @@ namespace ProjetoInterfaceMultifuncoes
             }
         }
 
-
+        // Conecta à porta serial selecionada e configura as opções
         private void conectarSerial()
         {
             if (comboBox1.SelectedItem == null || comboBox1.SelectedItem.ToString() == "Nenhuma porta encontrada")
@@ -121,7 +120,6 @@ namespace ProjetoInterfaceMultifuncoes
                 serialPort1.Parity = Parity.None;
                 serialPort1.StopBits = StopBits.One;
                 serialPort1.Handshake = Handshake.None;
-
                 serialPort1.Open();
                 btnConectar.Text = "Desconectar";
                 btnConectar.Enabled = true;
@@ -132,6 +130,7 @@ namespace ProjetoInterfaceMultifuncoes
             }
         }
 
+        // Desconecta da porta serial
         private void desconectarSerial()
         {
             try
@@ -147,6 +146,7 @@ namespace ProjetoInterfaceMultifuncoes
             }
         }
 
+        // Evento ao clicar no botão de conectar/desconectar
         private void btnConectar_Click(object sender, EventArgs e)
         {
             if (serialPort1.IsOpen)
@@ -159,31 +159,34 @@ namespace ProjetoInterfaceMultifuncoes
             }
         }
 
+        // Evento do temporizador que atualiza a lista de portas COM
         private void timerCOM_Tick(object sender, EventArgs e)
         {
             atualizaListaCOMs();
         }
 
-        private void picBoxLED_Click_1(object sender, EventArgs e)
+        // Evento ao clicar no PictureBox do LED, alternando entre ligar/desligar o LED
+        private async void btnLED_Click(object sender, EventArgs e)
         {
             if (serialPort1.IsOpen)
             {
                 try
                 {
-                    if (picBoxLED.Tag.ToString() == "Desligado")
+                    if (btnLED.Text == "Ligar")
                     {
-                        serialPort1.Write("D\n");
-                        picBoxLED.Tag = "Ligado";
-                        picBoxLED.Image = Image.FromFile("C:\\Users\\Aluno\\Desktop\\InterfaceMultifuncoes\\Imagens\\LedDesligado.jpg");
+                        serialPort1.Write("L\n");  // Comando para ligar o LED
+                        btnLED.Text = "Desligar";
+                        picBoxLED.Image = Image.FromFile("C:\\Users\\Aluno\\Desktop\\InterfaceMultifuncoes\\Imagens\\LedLigado.jpg");
                         picBoxLED.SizeMode = PictureBoxSizeMode.StretchImage;
+                        Thread.Sleep(500);
                     }
                     else
                     {
-                        serialPort1.Write("L\n");
-                        picBoxLED.Tag = "Desligado";
-                        picBoxLED.Image = Image.FromFile("C:\\Users\\Aluno\\Desktop\\InterfaceMultifuncoes\\Imagens\\LedLigado.jpg");
+                        serialPort1.Write("D\n");  // Comando para Desligar o LED
+                        btnLED.Text = "Ligar";
+                        picBoxLED.Image = Image.FromFile("C:\\Users\\Aluno\\Desktop\\InterfaceMultifuncoes\\Imagens\\LedDesligado.jpg");
                         picBoxLED.SizeMode = PictureBoxSizeMode.StretchImage;
-
+                        Thread.Sleep(500);
                     }
                 }
                 catch (Exception ex)
@@ -191,71 +194,6 @@ namespace ProjetoInterfaceMultifuncoes
                     MessageBox.Show("Erro ao enviar comando: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void lblSensorTemp_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblSensorTemp_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void aGauge1_ValueInRangeChanged(object sender, ValueInRangeChangedEventArgs e)
-        {
-
-        }
-
-        private void aGauge3_ValueInRangeChanged(object sender, ValueInRangeChangedEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

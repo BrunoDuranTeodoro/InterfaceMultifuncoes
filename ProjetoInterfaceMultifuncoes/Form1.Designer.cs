@@ -46,6 +46,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnConectar = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnLED = new System.Windows.Forms.Button();
             this.picBoxLED = new System.Windows.Forms.PictureBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
@@ -90,7 +91,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "CONEXÃO";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // pictureBox1
             // 
@@ -111,7 +111,6 @@
             this.textBox1.TabIndex = 10;
             this.textBox1.Text = "CONEXÃO COM O ARDUINO";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // comboBox1
             // 
@@ -134,7 +133,8 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.Black;
+            this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.Controls.Add(this.btnLED);
             this.tabPage2.Controls.Add(this.picBoxLED);
             this.tabPage2.ForeColor = System.Drawing.Color.Black;
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -144,15 +144,25 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "LED";
             // 
+            // btnLED
+            // 
+            this.btnLED.Location = new System.Drawing.Point(334, 350);
+            this.btnLED.Name = "btnLED";
+            this.btnLED.Size = new System.Drawing.Size(122, 40);
+            this.btnLED.TabIndex = 9;
+            this.btnLED.Text = "Ligar";
+            this.btnLED.UseVisualStyleBackColor = true;
+            this.btnLED.Click += new System.EventHandler(this.btnLED_Click);
+            // 
             // picBoxLED
             // 
             this.picBoxLED.BackColor = System.Drawing.Color.Transparent;
-            this.picBoxLED.Location = new System.Drawing.Point(3, 3);
+            this.picBoxLED.Location = new System.Drawing.Point(243, 6);
             this.picBoxLED.Name = "picBoxLED";
-            this.picBoxLED.Size = new System.Drawing.Size(788, 421);
+            this.picBoxLED.Size = new System.Drawing.Size(300, 300);
+            this.picBoxLED.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxLED.TabIndex = 8;
             this.picBoxLED.TabStop = false;
-            this.picBoxLED.Click += new System.EventHandler(this.picBoxLED_Click_1);
             // 
             // tabPage3
             // 
@@ -169,7 +179,6 @@
             this.tabPage3.Size = new System.Drawing.Size(791, 424);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "SENSORES";
-            this.tabPage3.Click += new System.EventHandler(this.tabPage3_Click);
             // 
             // label2
             // 
@@ -189,7 +198,6 @@
             this.label1.Size = new System.Drawing.Size(75, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Potenciômetro";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // aGauge3
             // 
@@ -206,31 +214,31 @@
             aGaugeLabel1.Text = "";
             this.aGauge3.GaugeLabels.Add(aGaugeLabel1);
             aGaugeRange1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            aGaugeRange1.EndValue = 20F;
+            aGaugeRange1.EndValue = 45F;
             aGaugeRange1.InnerRadius = 50;
             aGaugeRange1.InRange = false;
-            aGaugeRange1.Name = "GaugeRangeNormal";
+            aGaugeRange1.Name = "748*";
             aGaugeRange1.OuterRadius = 80;
             aGaugeRange1.StartValue = 0F;
             aGaugeRange2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            aGaugeRange2.EndValue = 30F;
+            aGaugeRange2.EndValue = 75F;
             aGaugeRange2.InnerRadius = 50;
             aGaugeRange2.InRange = false;
             aGaugeRange2.Name = "GaugeRangeAlerta2";
             aGaugeRange2.OuterRadius = 80;
-            aGaugeRange2.StartValue = 20F;
+            aGaugeRange2.StartValue = 45F;
             aGaugeRange3.Color = System.Drawing.Color.Red;
-            aGaugeRange3.EndValue = 50F;
+            aGaugeRange3.EndValue = 100F;
             aGaugeRange3.InnerRadius = 50;
             aGaugeRange3.InRange = false;
             aGaugeRange3.Name = "GaugeRangeAlerta3";
             aGaugeRange3.OuterRadius = 80;
-            aGaugeRange3.StartValue = 30F;
+            aGaugeRange3.StartValue = 75F;
             this.aGauge3.GaugeRanges.Add(aGaugeRange1);
             this.aGauge3.GaugeRanges.Add(aGaugeRange2);
             this.aGauge3.GaugeRanges.Add(aGaugeRange3);
             this.aGauge3.Location = new System.Drawing.Point(470, 138);
-            this.aGauge3.MaxValue = 50F;
+            this.aGauge3.MaxValue = 100F;
             this.aGauge3.MinValue = 0F;
             this.aGauge3.Name = "aGauge3";
             this.aGauge3.NeedleColor1 = System.Windows.Forms.AGaugeNeedleColor.Gray;
@@ -262,7 +270,6 @@
             this.aGauge3.TabIndex = 10;
             this.aGauge3.Text = "aGauge3";
             this.aGauge3.Value = 0F;
-            this.aGauge3.ValueInRangeChanged += new System.EventHandler<System.Windows.Forms.ValueInRangeChangedEventArgs>(this.aGauge3_ValueInRangeChanged);
             // 
             // aGauge1
             // 
@@ -343,7 +350,6 @@
             this.aGauge1.TabIndex = 8;
             this.aGauge1.Text = "aGauge1";
             this.aGauge1.Value = 0F;
-            this.aGauge1.ValueInRangeChanged += new System.EventHandler<System.Windows.Forms.ValueInRangeChangedEventArgs>(this.aGauge1_ValueInRangeChanged);
             // 
             // lblSensorTemp
             // 
@@ -353,7 +359,6 @@
             this.lblSensorTemp.Size = new System.Drawing.Size(67, 13);
             this.lblSensorTemp.TabIndex = 6;
             this.lblSensorTemp.Text = "Temperatura";
-            this.lblSensorTemp.Click += new System.EventHandler(this.lblSensorTemp_Click_1);
             // 
             // timerCOM
             // 
@@ -366,7 +371,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(802, 450);
             this.Controls.Add(this.tabControl1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -402,6 +407,7 @@
         private System.Windows.Forms.AGauge aGauge3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnLED;
     }
 }
 
